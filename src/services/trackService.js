@@ -30,7 +30,24 @@ const index = async () => {
     }
   };
 
+  const update = async (formData, trackId) => {
+    try {
+      const res = await fetch(`${BASE_URL}/${trackId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      return res.json();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+
   export {
     index,
     create,
+    update,
   };
