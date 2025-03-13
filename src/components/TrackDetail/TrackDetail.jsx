@@ -1,4 +1,3 @@
-
 const TrackDetail = (props) => {
     // return if props.selected is null
     if (!props.selected) {
@@ -13,17 +12,21 @@ const TrackDetail = (props) => {
     return (
       <div>
         <h2>Title: {props.selected.title}</h2>
-        <h2>Artist: {props.selected.artist}</h2>
+        <h3>Artist: {props.selected.artist}</h3>
+        <div>
         <button onClick={() => props.handleFormView(props.selected)}>
           Edit Track
         </button>
         <button onClick={() => props.handleDeleteTrack(props.selected._id)}>
-          Delete Track
-        </button>
+        Delete Track
+      </button>
+      <button onClick={() => props.handleNowPlayingTrack(props.selected)}>
+       Play Track
+      </button>
       </div>
+      </div>
+      
     );
   };
-
-
-
-export default TrackDetail; 
+  
+export default TrackDetail;
