@@ -17,6 +17,9 @@ const TrackDetail = (props) => {
         <button onClick={() => props.handleFormView(props.selected)}>
           Edit Track
         </button>
+        <button onClick={() => props.handleDeleteTrack(props.selected._id)}>
+          Delete Track
+        </button>
       </div>
     );
   };
